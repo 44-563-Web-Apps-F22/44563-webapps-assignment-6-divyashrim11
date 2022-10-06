@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discounts Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"   
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" 
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+    <title>My Discounts Page</title>
 </head>
  
 <body>
@@ -21,11 +27,29 @@
         <input type="button" class="btn btn-success" onclick="discount()" value="Apply discount">
     </form>
 </div>
+<br>
+<div class = "container">
+    <p id="result">This change will be seen here </p>
+</div>
 
-
-
-<p id="result">This change will be seen here </p>
-
+<div class="container">
+    <form>
+        <div class="container">
+        <label for="multiply">*</label>
+        <input type="radio" id="mutiply" name="multiply" value="times" onclick="chooseOp()">
+         </div><br>
+         <div class="container">
+        <label for="divide">/</label>
+        <input type="radio" id="divide" name="divide" value="divide" onclick="chooseOp()">
+         </div><br>
+         <div class="container">
+        <label for="exponent">**</label>
+        <input type="radio" id="exponent" name="exponent" value="exponent" onclick="chooseOp()">
+        </div><br>      
+    </form>
+    <p id="result1">The results will be displayed here</p><br>
+</div>
+<br>
 <script> 
 function discount()
         {   
@@ -40,7 +64,25 @@ function discount()
             }
             document.getElementById("result").innerHTML="Discounted amounts for base "+basevalue+" are "+result     
         }
-        
+        function chooseOp()
+        {
+            base=document.getElementById("basevalue").value
+            value1=document.getElementById("discountvalue").value
+            mul=document.getElementById("mutiply").checked
+            div=document.getElementById("divide").checked
+            exp=document.getElementById("exponent").checked
+            if(mul){
+                  document.getElementById("result1").innerHTML="Amount*Discount="+base*value1
+            }
+            else if(div){
+                
+                  document.getElementById("result1").innerHTML="Amount/Discount="+base/value1
+            }
+            else if(exp){
+                  document.getElementById("result1").innerHTML="Amount**Discount="+base**value1
+            }
+            
+        }     
 </script>
 
 </body>
