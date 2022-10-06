@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discounts Page</title>
+</head>
+ 
+<body>
+
+<h2>Divya Shree Moka computes discounts</h2>
+<div class = "container">
+    <form>
+        <label for="basevalue">Enter base amount</label>
+        <input type ="number" id="basevalue" name="basevalue" value =20> <br>
+    
+        <label for="discountvalue">Enter the discount percentage</label>
+        <input type ="number" id="discountvalue" name="discountvalue" value=10> <br>
+    
+        <input type="button" class="btn btn-success" onclick="discount()" value="Apply discount">
+    </form>
+</div>
+
+
+
+<p id="result">This change will be seen here </p>
+
+<script> 
+function discount()
+        {   
+             basevalue=document.getElementById("basevalue").value
+             value=document.getElementById("discountvalue").value
+             result="";
+            for(let i=1;i<=5;i++)
+            {
+                result+=(basevalue*i)-((basevalue*i)*value/100)
+               result+=" "
+               
+            }
+            document.getElementById("result").innerHTML="Discounted amounts for base "+basevalue+" are "+result     
+        }
+        
+</script>
+
+</body>
+</html> 
