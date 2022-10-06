@@ -8,7 +8,6 @@
 </head>
 <body>
 <h2>Musician guess by Divya Shree Moka</h2>
-
 <form>
     <div class="form-group">
         <label for="form1_musician_name">Enter the secret musician name</label>
@@ -21,11 +20,16 @@
     <input type="button" class= "btn btn-primary" onclick="checkGuess()" value="Check the guess">
 </form>
 
-<p id="result">This text will be replaced </p>
+<p id="result">Values are confirmed</p>
+
+<div class = "container">
+    <img src="Mayflies.jpg" width="100px" height="100px" alt="Mayflies" id="images"onclick="swapImage()">
+</div>
 
 <script> 
     var correct=0;
     var wrong=0;
+    useImage = 1;
 
 function checkGuess(){
     console.log("Getting form values")
@@ -40,7 +44,24 @@ function checkGuess(){
     }
     document.getElementById("result").innerHTML = "Correct count : "+correct + "<br>" + "Wrong Count : " + wrong
 }
-</script>
 
+function swapImage() {
+    switch(useImage){
+        case 1:
+            document.getElementById("images").src="Mayflies.jpg";
+            useImage+=1;
+            break;
+            case 2:
+            document.getElementById("images").src="ImperialMoth.jpg";
+            useImage+=1;
+            break;
+            case 3:
+            document.getElementById("images").src="Dragonflies.jpg";
+            useImage=1;
+            break;
+
+    }
+}
+</script>
 </body>
 </html> 
