@@ -4,23 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"   
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" 
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
     <title>My Javascript</title>
 </head>
 <body>
 <h2>Musician guess by Divya Shree Moka</h2>
-<form>
-    <div class="form-group">
-        <label for="form1_musician_name">Enter the secret musician name</label>
-        <input type ="password" class="form-comtrol" id="form1_musician_name" name="form1_musician_name" value="John Lennon"> <br>
-    </div>
-    <div class="form-group">
-        <label for="form1_nick">Guess the musician</label>
-        <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
-    </div>
-    <input type="button" class= "btn btn-primary" onclick="checkGuess();endoftheGame()" value="Check the guess">
-</form>
-
-<p id="result">Values are confirmed</p>
+<div class = "container">
+    <form>
+        <div class="form-group">
+            <label for="form1_musician_name">Enter the secret musician name</label>
+            <input type ="password" class="form-comtrol" id="form1_musician_name" name="form1_musician_name" value="John Lennon"> <br>
+            <br>
+        </div>
+        <div class="form-group">
+            <label for="form1_nick">Guess the musician</label>
+            <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+            <br>
+        </div>
+        <input type="button" class= "btn btn-primary" onclick="checkGuess();endoftheGame()" value="Check the guess">
+        <br>
+    </form>
+    <br>
+</div>
+<div class = "container">
+    <p id="result">Values are confirmed</p>
+</div>
+<br>
 
 <div class = "container">
     <img src="Mayflies.jpg" width="100px" height="100px" alt="Mayflies" id="images"onclick="swapImage()">
