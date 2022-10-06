@@ -17,7 +17,7 @@
         <label for="form1_nick">Guess the musician</label>
         <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
     </div>
-    <input type="button" class= "btn btn-primary" onclick="checkGuess()" value="Check the guess">
+    <input type="button" class= "btn btn-primary" onclick="checkGuess();endoftheGame()" value="Check the guess">
 </form>
 
 <p id="result">Values are confirmed</p>
@@ -63,5 +63,24 @@ function swapImage() {
     }
 }
 </script>
+<script>
+    function endoftheGame()
+    {
+        
+        while (wrong==3) {
+            if (wrong >=3) {
+                wrong -= 4
+                alert("Sorry, game over.")
+            }
+            else {
+                alert("You got it right")
+                document.getElementById("result").innerHTML = "Correct count:" + correct + " " + "Wrong count:" + wrong
+            }
+       
+            }
+
+        }
+    
+    </script>
 </body>
 </html> 
